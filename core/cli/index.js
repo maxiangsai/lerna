@@ -17,6 +17,9 @@ module.exports = lernaCLI;
 function lernaCLI(argv, cwd) {
   const cli = yargs(argv, cwd);
 
+  /**
+   * 全局选项初始化
+   */
   return globalOptions(cli)
     .usage("Usage: $0 <command> [options]")
     .demandCommand(1, "A command is required. Pass --help to see all available commands and options.")

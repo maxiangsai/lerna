@@ -22,11 +22,19 @@ const pkg = require("./package.json");
 
 module.exports = main;
 
+/**
+ * 接收命令入参，进行一系列的命令注册
+ * @param {*} argv
+ * @returns
+ */
 function main(argv) {
   const context = {
     lernaVersion: pkg.version,
   };
 
+  /**
+   * 调用cli package的函数
+   */
   return cli()
     .command(addCmd)
     .command(bootstrapCmd)
